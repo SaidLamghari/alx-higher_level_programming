@@ -26,7 +26,7 @@ int check_cycle(listint_t *list)
 	{
 
 
-		if (slow == fast)
+		if (s == f)
 		{
 			return (1);
 
