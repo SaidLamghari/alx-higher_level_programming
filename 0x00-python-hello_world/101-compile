@@ -1,4 +1,4 @@
 #!/bin/bash
 
 
-python3 -m compileal -b "$PYFILE"
+python3 -m compileal -b $PYFILE
