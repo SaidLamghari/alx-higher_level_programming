@@ -1,12 +1,7 @@
 #!/bin/bash
-
-pyfile="$PYFILE"
-output_file="${pyfile}c"
-
-echo "Compiling $pyfile ..."
-
-python3 -m py_compile -b "$pyfile"
-
+output_file="${$PYFILE}c"
+echo "Compiling $PYFILE..."
+python3 -m py_compile -b "$PYFILE"
 if [ -f "$output_file" ]; then
     echo "Compilation successful."
 else
