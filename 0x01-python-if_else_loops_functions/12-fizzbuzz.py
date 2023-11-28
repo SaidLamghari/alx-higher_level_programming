@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-"""Start of the  function that prints the numbers from 1 to 100 separated by a space"""
+"""Start of the  function that prints
+    the numbers from 1 to 100 separated by a space"""
 
 
 def fizzbuzz():
