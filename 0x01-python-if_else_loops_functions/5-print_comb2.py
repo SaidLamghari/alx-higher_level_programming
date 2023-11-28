@@ -5,5 +5,5 @@
 for nbr in range(100):
     if nbr != 99:
         print("{:02d}, ".format(nbr), end="")
-    else
+    else:
     print("{:02d}".format(nbr))
