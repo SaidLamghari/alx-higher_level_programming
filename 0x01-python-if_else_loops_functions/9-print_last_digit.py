@@ -3,7 +3,8 @@
 
 """Start of function that prints the last digit of a number"""
 
+
 def print_last_digit(number):
     l_digit = abs(number) % 10
-    print(l_digit)
+    print(l_digit, end="")
     return l_digit
