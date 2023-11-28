@@ -6,7 +6,7 @@
 
 def fizzbuzz():
     for val in range(1, 101):
-        if  val % 5 == 0 and val % 3 == 0:
+        if val % 5 == 0 and val % 3 == 0:
             print("FizzBuzz", end=" ")
         elif val % 5 == 0:
             print("Buzz", end=" ")
