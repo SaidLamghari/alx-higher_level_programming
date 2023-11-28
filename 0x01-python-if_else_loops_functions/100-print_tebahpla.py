@@ -7,4 +7,4 @@
 
 
 for val in range(ord('z'), ord('a') - 1, -1):
-    print(chr(val) if val % 2 == 0 else chr(val - 32), end="")
+    print("{}".format(chr(val) if val % 2 == 0 else chr(val - 32)), end="")
