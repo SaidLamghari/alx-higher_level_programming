@@ -8,6 +8,6 @@ def magic_calculation(a, b):
         while i <= 6:
             c = add(c, i)
             i += 1
-        retun c
+        return c
     else:
         return sub(a, b)
