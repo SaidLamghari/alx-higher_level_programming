@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-import string; print(string.ascii_uppercase + '\n')
+import string; print(string.ascii_uppercase)
