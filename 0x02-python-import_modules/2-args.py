@@ -4,6 +4,7 @@ if __name__ == '__main__':
     n_as = len(sys.argv) - 1
     if n_as == 0:
         print("0 argument.")
+        return
     else:
         print("{} argument{}:".format(n_as, 's' if n_as != 1 else ''))
         for i in range(n_as):
