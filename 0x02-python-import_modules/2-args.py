@@ -8,5 +8,5 @@ if __name__ == '__main__':
         print("0 argument.")
     else:
         print("{} argument{}:".format(n_as, 's' if n_as != 1 else ''))
-        for i, arg in enumerate(args, start=1):
+        for i in range(n_as):
             print("{}: {}".format(i, arg))
