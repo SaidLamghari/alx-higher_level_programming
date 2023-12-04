@@ -7,18 +7,19 @@
  */
 void print_python_list_info(PyObject *p)
 {
-	Py_ssize_t s, count;
+	Py_ssize_t num, count;
 	PyObject *it;
 
-	s = PyList_Size(p);
+	num = PyList_Size(p);
 	
-	printf("[*] Size of the Python List = %ld\n", s);
+	printf("[*] Size of the Python List = %ld\n", num);
 
 	printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
 
-	for (count = 0; count < s; count++)
+	for (count = 0; count < num; count++)
 	{
-		item = PyList_GetItem(p, count);
+		it = PyList_GetItem(p, count);
+
 		printf("Element %ld: %s\n", count, Py_TYPE(it)->tp_name);
 	}
 }
