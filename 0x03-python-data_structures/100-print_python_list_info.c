@@ -18,10 +18,13 @@ void print_python_list_info(PyObject *p)
 	printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
 	
 	count = 0;
+
 	if (num > 0)
 	{
 		while (count < num)
 		{
+
+
 			it = PyList_GetItem(p, count);
 
 			printf("Element %ld: %s\n", count, Py_TYPE(it)->tp_name);
