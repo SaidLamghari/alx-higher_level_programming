@@ -32,30 +32,22 @@ void print_python_list(PyObject *p)
  *
  */
 
-oid print_python_bytes(PyObject *p)
+void print_python_list(PyObject *p)
 {
-	    Py_ssize_t size, i = 0;
-	        char *str;
+	    Py_ssize_t size, alloc, i = 0;
+	        PyObject *item;
 
-		    printf("[.] bytes object info\n");
+		    size = PyList_Size(p);
+		        alloc = ((PyListObject *)p)->allocated;
 
-		        if (!PyBytes_Check(p))
-				    {
-					            printf("  [ERROR] Invalid Bytes Object\n");
-						            return;
-							        }
+			    printf("[*] Python list info\n");
+			        printf("[*] Size of the Python List = %zd\n", size);
+				    printf("[*] Allocated = %zd\n", alloc);
 
-			    size = PyBytes_Size(p);
-			        str = PyBytes_AsString(p);
-
-				    printf("  size: %zd\n", size);
-				        printf("  trying string: %s\n", str);
-
-					    printf("  first %zd bytes:", size + 1 > 10 ? 10 : size + 1);
-					        while (i < size + 1 && i < 10)
-							    {
-								            printf(" %02hhx", str[i]);
+				        while (i < size)
+						    {
+							            item = PyList_GetItem(p, i);
+								            printf("Element %zd: %s\n", i, Py_TYPE(item)->tp_name);
 									            i++;
 										        }
-						    printf("\n");
 }
