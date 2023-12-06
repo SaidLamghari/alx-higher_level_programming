@@ -40,7 +40,7 @@ void print_python_bytes(PyObject *p)
 {
 
 	Py_ssize_t sz;
-	char *str;
+	unsigned char *str;
 	Py_ssize_t count;
 
 	printf("[.] bytes object info\n");
@@ -65,7 +65,7 @@ void print_python_bytes(PyObject *p)
 
 	while (count < sz + 1 && count < 10)
 	{
-		printf(" %02x", (unsigned char)str[count]);
+		printf(" %02x", str[count]);
 
 		count++;
 	}
