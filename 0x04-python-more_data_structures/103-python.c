@@ -1,76 +1,55 @@
-#include <Python.h>
-void print_python_bytes(PyObject *p)
-void print_python_list(PyObject *p)
+nclude <Python.h>
 
 /**
- * print_python_list - Start of function
- *		that prints basic information about Python lists
- * @p: The pointer to a Python
- */
+ * print_python_list - Python lists
+ *   * @p:pointer
+ *    */
 void print_python_list(PyObject *p)
 {
-	Py_ssize_t sz;
-	Py_ssize_t ac;
-	PyObject *itm;
-	Py_ssize_t count;
-
-	sz = PyList_Size(p);
-	ac = ((PyListObject *)p)->allocated;
-
+	Py_ssize_t size, alloc, i = 0;
+	PyObject *item;
+	
+	size = PyList_Size(p);
+	alloc = ((PyListObject *)p)->allocated;
+	
 	printf("[*] Python list info\n");
-
-	printf("[*] Size of the Python List = %zd\n", sz);
-
-	printf("[*] Allocated = %zd\n", ac);
-
-	count = 0;
-	while (count < sz)
+	printf("[*] Size of the Python List = %zd\n", size);
+	printf("[*] Allocated = %zd\n", alloc);
+	
+	while (i < size)
 	{
-		itm = PyList_GetItem(p, count);
-
-		printf("Element %zd: %s\n", count, Py_TYPE(itm)->tp_name);
-		count++;
+		item = PyList_GetItem(p, i);
+		printf("Element %zd: %s\n", i, Py_TYPE(item)->tp_name);
+		i++;
 	}
 }
 
 /**
- * print_python_bytes - Start of function that prints
- *			basic information about Python bytes objects
- * @p: The pointer to a Python
+ * print_python_bytes - Prints basic information
+ * @p: pointer
  */
 void print_python_bytes(PyObject *p)
 {
-
-	Py_ssize_t sz;
+	Py_ssize_t size, i = 0;
 	char *str;
-	Py_ssize_t count;
 
 	printf("[.] bytes object info\n");
-
+	
+	
 	if (!PyBytes_Check(p))
 	{
 		printf("  [ERROR] Invalid Bytes Object\n");
-
 		return;
 	}
-	sz = PyBytes_Size(p);
-
+	size = PyBytes_Size(p);
 	str = PyBytes_AsString(p);
-
-	printf("  size: %zd\n", sz);
-
+	printf("  size: %zd\n", size);
 	printf("  trying string: %s\n", str);
-
-	printf("  first %zd bytes:", sz + 1 > 10 ? 10 : sz + 1);
-
-	count = 0;
-
-	while (count < sz + 1 && count < 10)
+	printf("  first %zd bytes:", size + 1 > 10 ? 10 : size + 1);
+	while (i < size + 1 && i < 10)
 	{
-		printf(" %02x", str[count]);
-
-		count++;
+		printf(" %02x", (unsigned char)str[i]);
+		i++;
 	}
-
 	printf("\n");
 }
