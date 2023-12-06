@@ -42,7 +42,7 @@ void print_python_bytes(PyObject *p)
 {
 
 	Py_ssize_t sz;
-	unsigned char *str;
+	char *str;
 	Py_ssize_t count;
 
 	printf("[.] bytes object info\n");
