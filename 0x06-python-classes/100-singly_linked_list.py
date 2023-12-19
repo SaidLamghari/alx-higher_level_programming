@@ -4,54 +4,50 @@
 
 class Node:
     def __init__(self, data, next_node=None):
-        if not isinstance(data, int):
+        if type(data) is not int:
             raise TypeError("data must be an integer")
         if next_node is not None and not isinstance(next_node, Node):
             raise TypeError("next_node must be a Node object")
-        self._data = data
-        self._next_node = next_node
+        self.__data = data
+        self.__next_node = next_node
 
-    @property
-    def data(self):
-        return self._data
+    def get_data(self):
+        return self.__data
 
-    @data.setter
-    def data(self, value):
-        if not isinstance(value, int):
+    def set_data(self, value):
+        if type(value) is not int:
             raise TypeError("data must be an integer")
-        self._data = value
+        self.__data = value
 
-    @property
-    def next_node(self):
-        return self._next_node
+    def get_next_node(self):
+        return self.__next_node
 
-    @next_node.setter
-    def next_node(self, value):
+    def set_next_node(self, value):
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
-        self._next_node = value
+        self.__next_node = value
 
 
 class SinglyLinkedList:
     def __init__(self):
-        self._head = None
+        self.__head = None
 
     def sorted_insert(self, value):
         new_node = Node(value)
-        if self._head is None or value < self._head.data:
-            new_node.next_node = self._head
-            self._head = new_node
+        if self.__head is None or value < self.__head.get_data():
+            new_node.set_next_node(self.__head)
+            self.__head = new_node
         else:
-            current = self._head
-            while current.next_node is not None and current.next_node.data < value:
-                current = current.next_node
-            new_node.next_node = current.next_node
-            current.next_node = new_node
+            current = self.__head
+            while current.get_next_node() is not None and current.get_next_node().get_data() < value:
+                current = current.get_next_node()
+            new_node.set_next_node(current.get_next_node())
+            current.set_next_node(new_node)
 
     def __str__(self):
         result = ""
-        current = self._head
+        current = self.__head
         while current is not None:
-            result += str(current.data) + "\n"
-            current = current.next_node
+            result += str(current.get_data()) + "\n"
+            current = current.get_next_node()
         return result
