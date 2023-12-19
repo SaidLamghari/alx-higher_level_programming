@@ -39,7 +39,8 @@ class SinglyLinkedList:
             self.__head = new_node
         else:
             current = self.__head
-            while current.get_next_node() is not None and current.get_next_node().get_data() < value:
+            while current.get_next_node() is not None and \
+                    current.get_next_node().get_data() < value:
                 current = current.get_next_node()
             new_node.set_next_node(current.get_next_node())
             current.set_next_node(new_node)
