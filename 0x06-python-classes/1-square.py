@@ -2,6 +2,7 @@
 # class Square that defines
 
 class Square:
+    """Defines"""
     def __init__(self, size):
         """class Square
         that defines
