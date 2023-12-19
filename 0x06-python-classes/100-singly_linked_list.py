@@ -2,7 +2,7 @@
 """class Square that defines a square"""
 
 
-class Square:
+class Node:
     """ Square """
     def __init__(self, data, next_node=None):
         self.data = data
