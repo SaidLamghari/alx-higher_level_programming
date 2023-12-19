@@ -4,10 +4,12 @@
 
 class Node:
     def __init__(self, data, next_node=None):
-        self._data = None
-        self._next_node = None
-        self.data = data
-        self.next_node = next_node
+        if not isinstance(data, int):
+            raise TypeError("data must be an integer")
+        if next_node is not None and not isinstance(next_node, Node):
+            raise TypeError("next_node must be a Node object")
+        self._data = data
+        self._next_node = next_node
 
     @property
     def data(self):
