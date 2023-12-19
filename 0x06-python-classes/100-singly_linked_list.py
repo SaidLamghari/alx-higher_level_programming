@@ -4,7 +4,9 @@
 
 class Node:
     def __init__(self, data, next_node=None):
-        self._data = data
+        self._data = None
+        self._next_node = None
+        self.data = data
         self.next_node = next_node
 
     @property
@@ -34,9 +36,7 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         new_node = Node(value)
-        if self._head is None:
-            self._head = new_node
-        elif value < self._head.data:
+        if self._head is None or value < self._head.data:
             new_node.next_node = self._head
             self._head = new_node
         else:
@@ -47,9 +47,9 @@ class SinglyLinkedList:
             current.next_node = new_node
 
     def __str__(self):
+        result = ""
         current = self._head
-        nodes = []
         while current is not None:
-            nodes.append(str(current.data))
+            result += str(current.data) + "\n"
             current = current.next_node
-        return "\n".join(nodes)
+        return result
