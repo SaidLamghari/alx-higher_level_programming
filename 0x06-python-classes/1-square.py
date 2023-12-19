@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-# class Square that defines
+""" class Square that defines a square """
+
 
 class Square:
-    """Defines"""
+    """ Square """
     def __init__(self, size):
-        """class Square
-        that defines
-        a square by:
-        (based on 0-square.py)
+        """initialize data
+
+        Args:
+            size Square
         """
         self.__size = size
