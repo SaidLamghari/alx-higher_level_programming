@@ -4,9 +4,9 @@
 
 class Square:
     def __init__(self, size):
-    """class Square
+        """class Square
         that defines
         a square by:
-            (based on 0-square.py)
+        (based on 0-square.py)
         """
         self.__size = size
