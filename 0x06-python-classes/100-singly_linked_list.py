@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""class Square that defines a square"""
 
 
-class Node:
+class Square:
+    """ Square """
     def __init__(self, data):
         self.data = data
         self.next_node = None
