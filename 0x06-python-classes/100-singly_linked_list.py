@@ -104,7 +104,7 @@ class SinglyLinkedList:
         while current:
             list_str += str(current.data) + "\n"
             current = current.next_node
-        return list_str
+        return list_str.rstrip()  # Remove trailing newline
 
     def sorted_insert(self, value):
         """
