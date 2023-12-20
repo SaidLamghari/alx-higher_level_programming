@@ -5,24 +5,27 @@ This module defines two classes: Node and SinglyLinkedList.
 
 class Node:
     """
-    Node represents a node in a singly linked list.
-    Each node contains a data attribute and a reference to the next node.
-    """
-    def __init__(self, data, next_node=None):
-        """
-        Initializes a new instance of the Node class.
+    Node represents a node of a singly linked list.
 
-        Parameters:
-            data (int): The data value to be stored in the node.
-            next_node (Node): Reference to the next node in the list.
-        """
+    Attributes:
+        __data (int): The data value stored in the node.
+        __next_node (Node): Reference to the next node in the list.
+
+    Args:
+        data (int): The data value to be stored in the node.
+        next_node (Node, optional): The next node in the list. Defaults to None.
+    """
+
+    def __init__(self, data, next_node=None):
+        self.__data = None
+        self.__next_node = None
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
         """
-        Get the data value of the node.
+        Getter method for the data value of the node.
 
         Returns:
             int: The data value of the node.
@@ -32,35 +35,35 @@ class Node:
     @data.setter
     def data(self, value):
         """
-        Set the data value of the node.
+        Setter method for the data value of the node.
 
-        Parameters:
+        Args:
             value (int): The data value to be set.
 
         Raises:
             TypeError: If the value is not an integer.
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
     @property
     def next_node(self):
         """
-        Get the reference to the next node.
+        Getter method for the next node in the list.
 
         Returns:
-            Node: The reference to the next node.
+            Node: The next node in the list.
         """
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
         """
-        Set the reference to the next node.
+        Setter method for the next node in the list.
 
-        Parameters:
-            value (Node): The reference to the next node.
+        Args:
+            value (Node): The next node in the list.
 
         Raises:
             TypeError: If the value is not a Node object.
@@ -73,8 +76,16 @@ class Node:
 class SinglyLinkedList:
     """
     SinglyLinkedList represents a singly linked list.
-    It provides methods to manipulate the list, such as insertion and traversal.
+
+    Attributes:
+        head (Node): The head of the linked list.
+
+    Methods:
+        __init__: Initializes a new instance of the SinglyLinkedList class.
+        __str__: Returns a string representation of the linked list.
+        sorted_insert: Inserts a new Node into the correct sorted position in the list (increasing order).
     """
+
     def __init__(self):
         """
         Initializes a new instance of the SinglyLinkedList class.
@@ -97,9 +108,9 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """
-        Inserts a new node with the given value into the linked list in sorted order.
+        Inserts a new Node with the given value into the linked list in the correct sorted position.
 
-        Parameters:
+        Args:
             value (int): The value to be inserted into the linked list.
         """
         new_node = Node(value)
