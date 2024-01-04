@@ -115,7 +115,8 @@ class Rectangle:
 
     def __repr__(self):
         """
-        Get a string representation of the rectangle that can be used to recreate a new instance.
+        Get a string representation of the rectangle that
+        can be used to recreate a new instance.
 
         Returns:
             str: A string representation of the rectangle.
@@ -124,7 +125,8 @@ class Rectangle:
 
     def __del__(self):
         """
-        Print a message when an instance of Rectangle is deleted and decrement the number_of_instances.
+        Print a message when an instance of Rectangle is deleted
+        and decrement the number_of_instances.
         """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
