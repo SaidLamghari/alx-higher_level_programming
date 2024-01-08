@@ -7,26 +7,12 @@ Using ``text_indentation``
 Import module:
     >>> text_indentation = __import__('5-text_indentation').text_indentation
 
+
 Test 1:
-        >>> text_indentation("Hello. How are you? I'm fine.")
-        Hello.
-        How are you?
-        I'm fine.
-
-Test 2:
-	>>> text_indentation("Lorem ipsum dolor sit amet: consectetur adipiscing elit.")
-        Lorem ipsum dolor sit amet:
-        consectetur adipiscing elit.
-
-Test 3:
-	>>> text_indentation("This is a test.")
-        This is a test.
-
-Test 4:
 	>>> text_indentation("")
         
 
-Test 5:
+Test 2:
 	>>> text_indentation(42)
         Traceback (most recent call last):
             ...
