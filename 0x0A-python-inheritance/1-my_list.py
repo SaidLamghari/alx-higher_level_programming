@@ -3,6 +3,7 @@
 
 
 class MyList(list):
+    """class"""
     def print_sorted(self):
         """
         Prints the list in sorted (ascending) order.
