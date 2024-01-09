@@ -24,9 +24,3 @@ def add_items_to_list(filename, items):
 
     my_list.extend(items)
     save_to_json_file(my_list, filename)
-
-
-if __name__ == '__main__':
-    args = sys.argv[1:]
-    filename = 'add_item.json'
-    add_items_to_list(filename, args)
