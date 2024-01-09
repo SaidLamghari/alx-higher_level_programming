@@ -18,6 +18,7 @@ def print_stats(total_size, status_codes):
         count = status_codes[code]
         print("{}: {}".format(code, count))
 
+
 def parse_line(line):
     """
     Parses a line of input and extracts the file size and status code.
@@ -30,6 +31,7 @@ def parse_line(line):
     """
     parts = line.split()
     return int(parts[-1]), parts[-2]
+
 
 def main():
     total_size = 0
@@ -46,6 +48,7 @@ def main():
     except KeyboardInterrupt:
         print_stats(total_size, status_codes)
         raise
+
 
 if __name__ == "__main__":
     main()
