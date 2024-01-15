@@ -83,3 +83,29 @@ class Base:
             return []
         return json.loads(json_string)
 
+
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Returns an instance with all attributes already set based on the provided dictionary.
+
+        Args:
+            **dictionary: A double pointer to a dictionary containing attribute values.
+
+        Returns:
+            Base: An instance with attributes set based on the dictionary.
+
+        Note:
+            The **dictionary is treated as **kwargs for the update method.
+    """
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if cls is Rectangle:
+            copy = Rectangle(1, 1)
+        elif cls is Square:
+            copy = Square(1)
+        else:
+            copy = None
+        copy.update(**dictionary)
+        return copy
