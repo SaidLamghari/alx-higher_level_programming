@@ -12,6 +12,17 @@ class TestBase(unittest.TestCase):
     """
     Test cases for the Base class.
     """
+    def setUp(self):
+        """
+        Instantiates class
+        """
+        Base._Base__nb_objects = 0
+
+    def tearDown(self):
+        """
+        Cleans test_method.
+        """
+        pass
 
     def test_base_negative_id(self):
         """

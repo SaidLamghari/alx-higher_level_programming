@@ -13,6 +13,18 @@ class TestSquare(unittest.TestCase):
     Test cases for the Square class.
     """
 
+    def setUp(self):
+        """
+        Instantiates class
+        """
+        Base._Base__nb_objects = 0
+
+    def tearDown(self):
+        """
+        Cleans test_method.
+        """
+        pass
+
     def test_square_area(self):
         """
         Test the calculation of the area of a Square.
