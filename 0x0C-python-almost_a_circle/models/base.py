@@ -13,12 +13,6 @@ class Base:
         """
         Initializes a Base instance.
 
-        Args:
-            id (int): The id of the instance. If provided, it will be assigned to
-                the `id` attribute. If not provided, a new id will be generated
-                based on the current number of objects and assigned to the `id`
-                attribute.
-
         Attributes:
             id (int): The id of the instance.
         """
@@ -26,7 +20,7 @@ class Base:
             self.id = id
         else:
             Base.__nb_objects += 1
-            self.id = Base.__nb_objectsi
+            self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -157,7 +151,7 @@ class Base:
             writer = csv.writer(fle)
             writer.writerows(list_objs)
 
-   @classmethod
+    @classmethod
     def load_from_file_csv(cls):
         """
         Deserializes objects from a CSV file.
