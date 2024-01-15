@@ -16,8 +16,8 @@ class Rectangle(Base):
             height (int): The height of the rectangle.
             x (int): The x-coordinate of the rectangle's position.
             y (int): The y-coordinate of the rectangle's position.
-            id (int): The id of the rectangle. If not provided, it will be handled
-                by the Base class.
+            id (int): The id of the rectangle. If not provided,
+                        it will be handled by the Base class.
 
         Attributes:
             width (int): The width of the rectangle.
@@ -102,3 +102,27 @@ class Rectangle(Base):
             print()
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
+
+    def __str__(self):
+        """ Returns the string representation of the rectangle """
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height))
+
+    def update(self, *args):
+        """ Updates the attributes of the rectangle """
+        if len(args) > 0:
+            self.id = args[0]
+        if len(args) > 1:
+            self.width = args[1]
+        if len(args) > 2:
+            self.height = args[2]
+        if len(args) > 3:
+            self.x = args[3]
+        if len(args) > 4:
+            self.y = args[4]
+
+    def update(self, *args, **kwargs):
+        '''  Updates the attributes of the Rectangle instance.'''
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
