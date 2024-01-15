@@ -109,3 +109,26 @@ class Base:
             copy = None
         copy.update(**dictionary)
         return copy
+
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances loaded from a JSON file.
+
+        Returns:
+            list: A list of instances of the current class.
+
+        Note:
+            The filename is <Class name>.json, where Class name is
+            the name of the class of the instances.
+            If the file doesn't exist, an empty list is returned.
+            The method uses the from_json_string and create
+            methods to load and create the instances.
+        """
+        from os import path
+        filename = f"{cls.__name__}.json"
+        if not os.path.isfile(filename):
+            return []
+        with open(filename, "r", encoding="utf-8") as fle:
+            return [cls.create(**d) for d in cls.from_json_string(fle.read())]
