@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ models/base.py """
 import json
+import csv
 
 
 class Base:
@@ -132,3 +133,53 @@ class Base:
             return []
         with open(filename, "r", encoding="utf-8") as fle:
             return [cls.create(**d) for d in cls.from_json_string(fle.read())]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        Serializes a list of objects to a CSV file.
+
+        Args:
+            list_objs (list): A list of objects to serialize.
+
+        """
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if list_objs is not None:
+            if cls is Rectangle:
+                list_objs = [[objs.id, objs.width, objs.height, objs.x, objs.y]
+                             for objs in list_objs]
+            else:
+                list_objs = [[objs.id, objs.size, objs.x, objs.y]
+                             for objs in list_objs]
+        with open('{}.csv'.format(cls.__name__), 'w', newline='',
+                  encoding='utf-8') as fle:
+            writer = csv.writer(fle)
+            writer.writerows(list_objs)
+
+   @classmethod
+    def load_from_file_csv(cls):
+        """
+        Deserializes objects from a CSV file.
+
+        Returns:
+            list: A list of deserialized objects.
+        """
+        from models.rectangle import Rectangle
+        from models.square import Square
+        retour = []
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'r', newline='',
+                  encoding='utf-8') as fle:
+            reader = csv.reader(fle)
+            for row in reader:
+                row = [int(i) for i in row]
+                if cls is Rectangle:
+                    dict = {"id": row[0], "width": row[1], "height": row[2],
+                         "x": row[3], "y": row[4]}
+                else:
+                    dict = {"id": row[0], "size": row[1],
+                         "x": row[2], "y": row[3]}
+                retour.append(cls.create(**dict))
+        return retour
+
