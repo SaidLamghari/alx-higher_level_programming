@@ -50,7 +50,8 @@ class Base:
 
         Note:
             If list_objs is None, an empty list is saved.
-            The filename is <Class name>.json, where Class name is the name of the class of the instances.
+            The filename is <Class name>.json, where
+            Class name is the name of the class of the instances.
             The file is overwritten if it already exists.
         """
         if list_objs is None:
@@ -63,7 +64,8 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """
-        Returns the list represented by the JSON string representation json_string.
+        Returns the list represented by
+        the JSON string representation json_string.
 
         Args:
             json_string (str): A string representing a list of dictionaries.
@@ -78,15 +80,15 @@ class Base:
             return []
         return json.loads(json_string)
 
-
-
     @classmethod
     def create(cls, **dictionary):
         """
-        Returns an instance with all attributes already set based on the provided dictionary.
+        Returns an instance with all attributes
+        already set based on the provided dictionary.
 
         Args:
-            **dictionary: A double pointer to a dictionary containing attribute values.
+            **dictionary: A double pointer to
+            a dictionary containing attribute values.
 
         Returns:
             Base: An instance with attributes set based on the dictionary.
@@ -104,7 +106,6 @@ class Base:
             copy = None
         copy.update(**dictionary)
         return copy
-
 
     @classmethod
     def load_from_file(cls):
@@ -169,11 +170,10 @@ class Base:
             for row in reader:
                 row = [int(i) for i in row]
                 if cls is Rectangle:
-                    dict = {"id": row[0], "width": row[1], "height": row[2],
-                         "x": row[3], "y": row[4]}
+                    dict = {"id": row[0], "width": row[1], "height":
+                            row[2], "x": row[3], "y": row[4]}
                 else:
                     dict = {"id": row[0], "size": row[1],
                          "x": row[2], "y": row[3]}
                 retour.append(cls.create(**dict))
         return retour
-
