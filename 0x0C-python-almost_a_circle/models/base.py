@@ -164,15 +164,14 @@ class Base:
         from models.rectangle import Rectangle
         from models.square import Square
         retour = []
-        filename = cls.__name__ + ".csv"
-        with open(filename, 'r', newline='', encoding='utf-8') as fle:
+        """filename = cls.__name__ + ".csv"""
+        with open('{}.csv'.format(cls.__name__), 'r', newline='', encoding='utf-8') as fle:
             reader = csv.reader(fle)
             for row in reader:
                 row = [int(i) for i in row]
                 if cls is Rectangle:
                     dic = {"id": row[0], "width": row[1], "height": row[2], "x": row[3], "y": row[4]}
                 else:
-                    dic = {"id": row[0], "size": row[1],
-                         "x": row[2], "y": row[3]}
+                    dic = {"id": row[0], "size": row[1], "x": row[2], "y": row[3]}
                 retour.append(cls.create(**dic))
         return retour
