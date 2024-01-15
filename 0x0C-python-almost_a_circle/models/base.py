@@ -170,9 +170,9 @@ class Base:
             for row in reader:
                 row = [int(i) for i in row]
                 if cls is Rectangle:
-                    di = {"id": row[0], "width": row[1], "height": row[2], "x": row[3], "y": row[4]}
+                    dic = {"id": row[0], "width": row[1], "height": row[2], "x": row[3], "y": row[4]}
                 else:
                     dic = {"id": row[0], "size": row[1],
                          "x": row[2], "y": row[3]}
-                retour.append(cls.create(**di))
+                retour.append(cls.create(**dic))
         return retour
