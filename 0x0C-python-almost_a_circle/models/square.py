@@ -29,3 +29,46 @@ class Square(Rectangle):
     def __str__(self):
         """ Returns the string representation of the square """
         return ("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width))
+
+    @property
+    def size(self):
+        """ Getter for the size attribute """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        Setter for the size attribute.
+
+        Args:
+            value (int): The new size value.
+
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than or equal to 0.
+        """
+        self.width = value
+        self.height = value
+
+    def __update(self, id=None, size=None, x=None, y=None):
+        """
+        Method that updates instance attributes
+        """
+        if id is not None:
+            self.id = id
+        if size is not None:
+            self.size = size
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        """
+        Update the class Square by adding the public method
+        """
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
+
