@@ -125,7 +125,7 @@ class Base:
         """
         from os import path
         filename = f"{cls.__name__}.json"
-        if not os.path.isfile(filename):
+        if not path.isfile(filename):
             return []
         with open(filename, "r", encoding="utf-8") as fle:
             return [cls.create(**d) for d in cls.from_json_string(fle.read())]
