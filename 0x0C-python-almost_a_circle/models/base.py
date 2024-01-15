@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ models/base.py """
+import json
+
 
 class Base:
     """ Base class for managing id attribute """
@@ -24,3 +26,21 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objectsi
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """
+        Converts a list of dictionaries to its JSON string representation.
+
+        Args:
+            list_dictionaries (list): A list of dictionaries.
+
+        Returns:
+            str: The JSON string representation of list_dictionaries.
+
+        Note:
+            If list_dictionaries is None or empty, the string "[]" is returned.
+        """
+        if list_dictionaries is None or len(list_dictionaries) == 0:
+            return "[]"
+        return json.dumps(list_dictionaries)
