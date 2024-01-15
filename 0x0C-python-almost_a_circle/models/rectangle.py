@@ -108,12 +108,12 @@ class Rectangle(Base):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
             self.x, self.y, self.width, self.height))
 
-    def __update(self, in_id=None, in_width=None, in_height=None, in_x=None, in_y=None):
+    def __update(self, id=None, in_width=None, in_height=None, in_x=None, in_y=None):
         """
         Updates the attributes of the rectangle
         """
-        if in_id is not None:
-            self.id = in_id
+        if id is not None:
+            self.id = id
         if width is not None:
             self.width = in_width
         if height is not None:
