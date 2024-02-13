@@ -2,4 +2,4 @@
 -- Author: SAID LAMGHARI
 -- Print the full description of the first_table
 -- Date: February 13, 2024
-SHOW CREATE TABLE 'first_table';
+SHOW CREATE TABLE first_table;
