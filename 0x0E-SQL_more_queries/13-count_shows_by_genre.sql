@@ -7,9 +7,6 @@
 -- based on the tv_shows.id and tv_show_genres.show_id columns.
 -- It retrieves the genre names from the tv_show_genres table and counts the number of shows for each genre.
 -- The results are grouped by genre and sorted in descending order by the number of shows linked.
-SELECT tv_show_genres.genre_id AS genre,
-COUNT(tv_show_genres.show_id) AS number_of_shows
-FROM tv_show_genres
-GROUP BY tv_show_genres.genre_id
-HAVING number_of_shows > 0
-ORDER BY number_of_shows DESC;
+SELECT tv_show_genres.genre_id AS genre, COUNT(tv_show_genres.show_id) AS number_of_shows
+FROM tv_show_genres GROUP BY tv_show_genres.genre_id
+HAVING number_of_shows > 0 ORDER BY number_of_shows DESC;
