@@ -5,6 +5,15 @@ ALTER DATABASE hbtn_0c_0 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 USE hbtn_0c_0;
 
-ALTER TABLE first_table CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-ALTER TABLE first_table DROP COLUMN name;
-ALTER TABLE first_table ADD COLUMN name VARCHAR(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL AFTER id;
+-- Create a new table with the desired collation
+CREATE TABLE new_table LIKE first_table;
+ALTER TABLE new_table MODIFY name VARCHAR(256) COLLATE utf8mb4_unicode_ci;
+
+-- Copy data from the original table to the new table
+INSERT INTO new_table SELECT * FROM first_table;
+
+-- Optionally, you can drop the original table
+DROP TABLE first_table;
+
+-- Rename the new table to the original table name
+RENAME TABLE new_table TO first_table;
