@@ -2,7 +2,7 @@
 -- Description: A script to display the average temperature (in Fahrenheit) by city, ordered by temperature in descending order.
 -- Author: SAID LAMGHARI
 -- Display the average temperature by city
-SELECT city, AVG(value) AS avger_temp
+SELECT city, AVG(temperature) AS avg_temp
 FROM temperatures
 GROUP BY city
-ORDER BY avger_temp DESC;
+ORDER BY avg_temp DESC;
