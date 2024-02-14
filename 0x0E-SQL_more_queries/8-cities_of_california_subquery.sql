@@ -6,11 +6,12 @@
 -- It uses a subquery to find the state_id of California from the states table,
 -- and then selects the cities that have the corresponding state_id from the cities table.
 -- The results are sorted in ascending order by cities.id.
--- Step 1: Use hbtn_0d_usa database
-USE hbtn_0d_usa;
+
+-- Step 1: Use the specified database
+USE `hbtn_0d_usa`;
+
 -- Step 2: List cities of California
-SELECT * FROM cities
-WHERE state_id = (
-  SELECT id FROM states WHERE name = 'California'
-)
-ORDER BY id ASC;
+SELECT cities.*
+FROM cities
+WHERE cities.state_id = (SELECT id FROM states WHERE name = 'California')
+ORDER BY cities.id ASC;
