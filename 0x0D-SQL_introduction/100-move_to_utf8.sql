@@ -2,15 +2,11 @@
 -- Author: SAID LAMGHARI
 -- Step 3: Convert the field to UTF8
 
--- Create a new table with the desired collation
-CREATE TABLE new_table LIKE first_table;
-ALTER TABLE new_table MODIFY name VARCHAR(256) COLLATE utf8mb4_unicode_ci;
+-- Convert the hbtn_0c_0 database to UTF8 (utf8mb4, collate utf8mb4_unicode_ci)
+ALTER DATABASE hbtn_0c_0 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- Copy data from the original table to the new table
-INSERT INTO new_table SELECT * FROM first_table;
+-- Convert the first_table table to UTF8 (utf8mb4, collate utf8mb4_unicode_ci)
+ALTER TABLE first_table CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
--- Optionally, you can drop the original table
-DROP TABLE first_table;
-
--- Rename the new table to the original table name
-RENAME TABLE new_table TO first_table;
+-- Convert the name field in the first_table table to UTF8 (utf8mb4, collate utf8mb4_unicode_ci)
+ALTER TABLE first_table MODIFY name VARCHAR(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
