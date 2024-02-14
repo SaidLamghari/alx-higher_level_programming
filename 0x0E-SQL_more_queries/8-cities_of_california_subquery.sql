@@ -6,7 +6,7 @@
 -- It uses a subquery to find the state_id of California from the states table,
 -- and then selects the cities that have the corresponding state_id from the cities table.
 -- The results are sorted in ascending order by cities.id.
-SELECT cities.*
+SELECT id, name
 FROM cities
-WHERE cities.state_id = (SELECT id FROM states WHERE name = 'California')
-ORDER BY cities.id ASC;
+WHERE state_id = (SELECT id FROM states WHERE name = 'California')
+ORDER BY id ASC;
