@@ -8,4 +8,3 @@ const myLine3 = 'JavaScript is amazing';
 console.log(myLine1);
 console.log(myLine2);
 console.log(myLine3);
-
