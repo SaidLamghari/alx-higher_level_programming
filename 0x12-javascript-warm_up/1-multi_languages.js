@@ -1,4 +1,4 @@
-#/usr/bin/node
+#!/usr/bin/node
 // Autor: Said LAMGHARI
 
 const myLine1 = 'C is fun';
