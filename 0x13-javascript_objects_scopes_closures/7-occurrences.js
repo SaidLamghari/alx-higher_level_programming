@@ -5,14 +5,14 @@
 // of occurrences in a list
 
 exports.nbOccurences = function (list, searchElement) {
-  let cntoc = 0;
+  let CntOccu = 0;
 
     for (let cnt = 0; cnt < list.length; cnt++) {
-      if (list[i] === searchElement) {
-        cntoc++;
+      if (list[cnt] === searchElement) {
+        CntOccu++;
       }
     }
 
-  return cntoc;
+  return CntOccu;
 
 };
