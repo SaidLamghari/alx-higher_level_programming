@@ -7,12 +7,11 @@
 exports.nbOccurences = function (list, searchElement) {
   let CntOccu = 0;
 
-    for (let cnt = 0; cnt < list.length; cnt++) {
-      if (list[cnt] === searchElement) {
-        CntOccu++;
-      }
+  for (let cnt = 0; cnt < list.length; cnt++) {
+    if (list[cnt] === searchElement) {
+      CntOccu++;
     }
+  }
 
   return CntOccu;
-
 };
