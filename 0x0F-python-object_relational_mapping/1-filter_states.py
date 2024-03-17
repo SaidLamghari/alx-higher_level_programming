@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     # Connect to the server of MySQL
     db = MySQLdb.connect(
-        charset="utf8"
+        charset="utf8",
         host=host,
         port=port, user=UsName,
         passwd=PsWord,
