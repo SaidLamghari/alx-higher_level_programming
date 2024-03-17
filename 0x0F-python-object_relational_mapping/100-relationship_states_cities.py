@@ -34,13 +34,13 @@ if __name__ == "__main__":
 
     # Create California
     # create San Francisco
-    NwStatCalif = State(name="California")
+    NwStat = State(name="California")
 
-    NwCityFranc = City(name="San Francisco", state=NwStatCalif)
+    NwCity = City(name="San Francisco", state=NwStat)
 
-    session.add(NwStatCalif)
+    session.add(NwStat)
 
-    session.add(NwCityFranc)
+    session.add(NwCity)
 
     session.commit()
 
