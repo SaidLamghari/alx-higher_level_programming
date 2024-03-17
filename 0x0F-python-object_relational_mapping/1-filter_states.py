@@ -29,14 +29,16 @@ if __name__ == "__main__":
     ObjCursor = db.cursor()
 
     # The SQL to select states that start with 'N'
-    ObjCursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    ObjCursor.execute("SELECT * FROM states\
+            WHERE name LIKE 'N%' ORDER BY id ASC")
 
     # return the Rows
     QuRows = ObjCursor.fetchall()
 
     # Print
     for PrRow in QuRows:
-        print(PrRow)
+        if row[1][0] == 'N':
+            print(PrRow)
 
     # Close the conection of DaBase and the ObjCursorv
     ObjCursor.close()
