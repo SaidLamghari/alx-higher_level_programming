@@ -43,5 +43,4 @@ if __name__ == "__main__":
 
     # Close the connection of DaBase and the ObjCursor
     ObjCursor.close()
-
     db.close()
