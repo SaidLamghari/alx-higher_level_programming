@@ -1,0 +1,48 @@
+#!/usr/bin/python3
+"""Creates California
+and San Francisco
+in the PsDaBase hbtn_0e_100_usa."""
+
+from sqlalchemy import create_engine
+
+from relationship_state import Base, State
+
+import sys
+
+from relationship_city import City
+
+from sqlalchemy.orm import sessionmaker
+
+
+if __name__ == "__main__":
+    # MySQL setting
+    UsName = sys.argv[1]
+    PsWord = sys.argv[2]
+    PsDaBase = sys.argv[3]
+    host = "localhost"
+    port = 3306
+
+    # Create the CrEng
+    # bind it to session
+    CrEng = create_engine(f"mysql+mysqldb://{UsName}:\
+                           {PsWord}@{host}:{port}/{PsDaBase}")
+    Base.metadata.create_all(CrEng)
+
+    Session = sessionmaker(bind=CrEng)
+
+    session = Session()
+
+    # Create California
+    # create San Francisco
+    NwStatCalif = State(name="California")
+
+    NwCityFranc = City(name="San Francisco", state=NwStatCalif)
+
+    session.add(NwStatCalif)
+
+    session.add(NwCityFranc)
+
+    session.commit()
+
+    # Close
+    session.close()
