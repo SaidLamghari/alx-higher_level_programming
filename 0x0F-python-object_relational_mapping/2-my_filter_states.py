@@ -30,9 +30,8 @@ if __name__ == "__main__":
     ObjCursor = db.cursor()
 
     # The SQL to select states with the name that is provided
-    SqlQry = "SELECT * FROM states\
-        WHERE name = %s ORDER BY id ASC"
-    ObjCursor.execute(SqlQry, (SatName,))
+    SqlQry = "SELECT * FROM states WHERE name LIKE BINARY '{}'"
+    ObjCursor.execute(SqlQry.format(SatName))
 
     # Return the QuRows
     QuRows = ObjCursor.fetchall()
@@ -43,4 +42,5 @@ if __name__ == "__main__":
 
     # Close the connection of DaBase and the ObjCursor
     ObjCursor.close()
+
     db.close()
