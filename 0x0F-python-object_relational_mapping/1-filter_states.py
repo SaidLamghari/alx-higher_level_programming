@@ -23,7 +23,6 @@ if __name__ == "__main__":
         port=port, user=UsName,
         passwd=PsWord,
         db=DaBase,
-        charset="utf8"
     )
 
     # Create a ObjCursor to execute SQL
