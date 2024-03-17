@@ -29,8 +29,8 @@ if __name__ == "__main__":
     # Retrieve all objects
     # containing the letter 'a'
     # sort them by ID
-    ObjStates = session.query(State)\
-            .filter(State.name.like('%a%')).order_by(State.id).all()
+    ObjStates = session.query(State)
+    .filter(State.name.like('%a%')).order_by(State.id).all()
 
     # The print
     for ObjState in ObjStates:
