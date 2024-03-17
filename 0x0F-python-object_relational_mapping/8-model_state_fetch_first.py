@@ -19,7 +19,8 @@ if __name__ == "__main__":
 
     # Create the engine
     # bind it to the session
-    engine = create_engine(f"mysql+mysqldb://{UsName}:{PsWord}@{host}:{port}/{PsDaBase}")
+    engine = create_engine(f"mysql+mysqldb://{UsName}:\
+            {PsWord}@{host}:{port}/{PsDaBase}")
     Session = sessionmaker(bind=engine)
     session = Session()
 
