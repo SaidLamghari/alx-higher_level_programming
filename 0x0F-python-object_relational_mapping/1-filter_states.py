@@ -37,8 +37,7 @@ if __name__ == "__main__":
 
     # Print
     for PrRow in QuRows:
-        if row[1][0] == 'N':
-            print(PrRow)
+        print(PrRow)
 
     # Close the conection of DaBase and the ObjCursorv
     ObjCursor.close()
