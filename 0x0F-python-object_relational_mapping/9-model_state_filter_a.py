@@ -21,14 +21,16 @@ if __name__ == "__main__":
 
     # Create the engine
     # bind it to the session
-    engine = create_engine(f"mysql+mysqldb://{UsName}:{PsWord}@{host}:{port}/{PsDaBase}")
+    engine = create_engine(f"mysql+mysqldb://{UsName}:\
+            {PsWord}@{host}:{port}/{PsDaBase}")
     Session = sessionmaker(bind=engine)
     session = Session()
 
     # Retrieve all objects
     # containing the letter 'a'
     # sort them by ID
-    ObjStates = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
+    ObjStates = session.query(State)\
+            .filter(State.name.like('%a%')).order_by(State.id).all()
 
     # The print
     for ObjState in ObjStates:
