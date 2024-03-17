@@ -10,7 +10,6 @@ from relationship_state import Base
 from sqlalchemy.orm import relationship
 
 
-
 class City(Base):
     """
     Represents a City.
@@ -21,8 +20,8 @@ class City(Base):
         id : The primary key .
 
         state_id : The foreign key .
-    
-        name : The name column .
+
+        name : The name column.
     """
     __tablename__ = 'cities'
 
