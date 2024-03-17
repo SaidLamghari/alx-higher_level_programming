@@ -24,8 +24,8 @@ if __name__ == "__main__":
 
     # Create the CrEng
     # bind it to session
-    CrEng = create_engine(f"mysql+mysqldb://{UsName}:\
-                           {PsWord}@{host}:{port}/{PsDaBase}")
+    CrEng = create_engine(f"mysql+mysqldb://{UsName}:{PsWord}@{host}:{port}/{PsDaBase}")
+
     Base.metadata.create_all(CrEng)
 
     Session = sessionmaker(bind=CrEng)
