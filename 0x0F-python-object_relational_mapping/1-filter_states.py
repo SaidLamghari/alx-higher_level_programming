@@ -29,8 +29,7 @@ if __name__ == "__main__":
     ObjCursor = db.cursor()
 
     # The SQL to select states that start with 'N'
-    ObjCursor.execute("SELECT * FROM states\
-            WHERE name LIKE 'N%' ORDER BY id ASC")
+    ObjCursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     # return the Rows
     QuRows = ObjCursor.fetchall()
