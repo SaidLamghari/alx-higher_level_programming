@@ -18,11 +18,11 @@ if __name__ == "__main__":
     host = "localhost"
     port = 3306
 
-    # Create the CrEng
+    # Create the engine
     # bind it to the session
-    CrEng = create_engine(f"mysql+mysqldb://{UsName}:{PsWord}@{host}:{port}/{PsDaBase}")
-    Base.metadata.create_all(CrEng)
-    Session = sessionmaker(bind=CrEng)
+    engine = create_engine(f"mysql+mysqldb://{UsName}:{PsWord}@{host}:{port}/{PsDaBase}")
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
 
     # Retrieve all State
