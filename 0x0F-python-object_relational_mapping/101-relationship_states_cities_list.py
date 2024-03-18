@@ -3,11 +3,12 @@
 corresponding City objects
 contained in the PsDaBase hbtn_0e_101_usa."""
 
-import sys
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 from relationship_state import Base, State
+import sys
 from relationship_city import City
+from sqlalchemy.orm import sessionmaker
+
 
 if __name__ == "__main__":
     # MySQL setting
@@ -20,11 +21,8 @@ if __name__ == "__main__":
     # Create the CrEng
     # bind it to the session
     CrEng = create_engine(f"mysql+mysqldb://{UsName}:{PsWord}@{host}:{port}/{PsDaBase}")
-
     Base.metadata.create_all(CrEng)
-
     Session = sessionmaker(bind=CrEng)
-
     session = Session()
 
     # Retrieve all State
