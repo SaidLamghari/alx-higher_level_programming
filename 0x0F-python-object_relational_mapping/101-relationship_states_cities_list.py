@@ -3,12 +3,11 @@
 corresponding City objects
 contained in the PsDaBase hbtn_0e_101_usa."""
 
-from sqlalchemy import create_engine
-from relationship_state import Base, State
 import sys
-from relationship_city import City
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
+from relationship_state import Base, State
+from relationship_city import City
 
 if __name__ == "__main__":
     # MySQL setting
