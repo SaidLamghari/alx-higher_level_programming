@@ -4,11 +4,8 @@ Defines the class  State.
 """
 
 from sqlalchemy import Column, Integer, String
-
 from relationship_city import Base, City
-
 from sqlalchemy.ext.declarative import declarative_base
-
 from sqlalchemy.orm import relationship
 
 

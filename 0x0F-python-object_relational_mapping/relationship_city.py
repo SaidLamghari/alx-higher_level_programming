@@ -4,11 +4,8 @@ Defines the class City.
 """
 
 from sqlalchemy import Column, Integer, String, ForeignKey
-
 from relationship_state import Base
-
 from sqlalchemy.ext.declarative import declarative_base
-
 from sqlalchemy.orm import relationship
 
 
