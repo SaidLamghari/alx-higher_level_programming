@@ -15,15 +15,10 @@ from sqlalchemy.orm import relationship
 class State(Base):
     """
     Represents a State.
-
     Attributes:
         __tablename__ : The database table name.
-
         id : The primary key.
-
-        cities : The relationship between State and City.
-
-        name : The name .
+        cities : The relationship between State and City. name : The name.
     """
     __tablename__ = 'states'
 

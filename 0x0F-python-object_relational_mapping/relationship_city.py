@@ -18,11 +18,7 @@ class City(Base):
 
     Attributes:
         __tablename__ (str): The database table name.
-
-        id : The primary key .
-
-        state_id : The foreign key .
-
+        id : The primary key. state_id : The foreign key.
         name : The name column.
     """
     __tablename__ = 'cities'
