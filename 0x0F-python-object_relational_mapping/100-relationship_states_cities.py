@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""Creates California
-and San Francisco
-in the PsDaBase hbtn_0e_100_usa.
-Autor : SAID LAMGHARI"""
+# Creates California
+# and San Francisco
+# in the PsDaBase hbtn_0e_100_usa.
+# Autor : SAID LAMGHARI
 from sqlalchemy import create_engine
 
 from relationship_state import Base, State

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" Defines the class  State."""
-""" Autor :Said LAMGHARI """
+# Def. the class  State
+# Autor :Said LAMGHARI
 
 from sqlalchemy import Column, Integer, String
 from relationship_city import Base, City

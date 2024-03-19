@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" Def the class City."""
-""" Autor : SAID LAMGHARI"""
+# Def the class City.
+# Autor : SAID LAMGHARI
 from sqlalchemy import Column, Integer, String, ForeignKey
 from relationship_state import Base
 from sqlalchemy.ext.declarative import declarative_base
