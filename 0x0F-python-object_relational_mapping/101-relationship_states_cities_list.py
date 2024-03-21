@@ -15,7 +15,6 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
-    """MySQL setting"""
     UsName = sys.argv[1]
     PsWord = sys.argv[2]
     PsDaBase = sys.argv[3]
