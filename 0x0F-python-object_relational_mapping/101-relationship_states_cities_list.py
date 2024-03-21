@@ -12,31 +12,24 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
-    # MySQL setting
+    """MySQL setting"""
     UsName = sys.argv[1]
     PsWord = sys.argv[2]
     PsDaBase = sys.argv[3]
     host = "localhost"
     port = 3306
 
-    # Create the engine
-    # bind it to the session
-    engine = create_engine(f"mysql+mysqldb://{UsName}:\
+    engn = create_engine(f"mysql+mysqldb://{UsName}:\
             {PsWord}@{host}:{port}/{PsDaBase}")
-    Base.metadata.create_all(engine)
-    Session = sessionmaker(bind=engine)
+    Base.metadata.create_all(engn)
+    Session = sessionmaker(bind=engn)
     session = Session()
 
-    # Retrieve all State
-    # whith their corresponding City
     ObjStates = session.query(State).order_by(State.id).all()
 
-    # Display the State
-    # Display their corresponding City
     for ObjState in ObjStates:
         print(f"{ObjState.id}: {ObjState.name}")
         for city in ObjState.cities:
             print(f"\t{city.id}: {city.name}")
 
-    # Close the session
     session.close()
