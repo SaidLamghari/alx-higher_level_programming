@@ -1,21 +1,20 @@
 #!/usr/bin/python3
-# Def the class City.
-# Autor : SAID LAMGHARI
+"""
+Defines the class
+definition of a City.
+Autor :SAID LAMGHARI
+"""
+
+from model_state import Base
+
 from sqlalchemy import Column, Integer, String, ForeignKey
-from relationship_state import Base
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
 
 
 class City(Base):
     """
-    Represents a City.
-
-    Attributes:
-        __tablename__ (str): The database table name.
-        id : The primary key. state_id : The foreign key.
-        name : The name column.
+    Rep. a City.
     """
+
     __tablename__ = 'cities'
 
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
