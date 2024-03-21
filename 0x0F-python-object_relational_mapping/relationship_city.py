@@ -1,10 +1,4 @@
 #!/usr/bin/python3
-"""
-Defines the class
-definition of a City.
-Autor :SAID LAMGHARI
-"""
-
 from model_state import Base
 
 from sqlalchemy import Column, Integer, String, ForeignKey
@@ -12,7 +6,21 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 
 class City(Base):
     """
-    Rep. a City.
+    Represents a City.
+
+    Attributes:
+        __tablename__ (str): The name of the database.
+        id (Column): The primary key the city ID.
+        name (Column): The column for the city.
+        state_id (Column): The foreign key column referencing the ID.
+
+    Author:
+        Said Lamghari
+
+    Dependencies:
+        - SQLAlchemy
+        - relationship_state module
+
     """
 
     __tablename__ = 'cities'
