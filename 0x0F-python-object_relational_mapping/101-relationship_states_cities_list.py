@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-"""Lists all State objects
+
+"""
+Lists all State objects
 corresponding City objects
-contained in the PsDaBase hbtn_0e_101_usa."""
+contained in the PsDaBase hbtn_0e_101_usa.
+"""
 
 from sqlalchemy import create_engine
 from relationship_state import Base, State
