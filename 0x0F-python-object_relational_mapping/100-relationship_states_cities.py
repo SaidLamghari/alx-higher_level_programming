@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+'''
+SAID LAMGHARI
+'''
 from relationship_state import Base, State
 
 import sys
