@@ -1,32 +1,4 @@
 #!/usr/bin/python3
-"""
-Module: create_california_sf
-
-Description:
-This module creates the "California" state and "San Francisco" city in the database "hbtn_0e_100_usa" using SQLAlchemy.
-
-Author:
-Said Lamghari
-
-Dependencies:
-- Python 3
-- SQLAlchemy
-- relationship_state module
-- relationship_city module
-
-Usage:
-To use this module, you need to provide three command-line arguments: UsName, PsWord, and PsDaBase.
-
-- UsName: The username for the database connection.
-- PsWord: The password for the database connection.
-- PsDaBase: The name of the database.
-
-Example Usage:
-python create_california_sf.py <UsName> <PsWord> <PsDaBase>
-
-Note: Make sure to replace "<UsName>", "<PsWord>", and "<PsDaBase>" with the actual values.
-"""
-
 from relationship_state import Base, State
 
 import sys
