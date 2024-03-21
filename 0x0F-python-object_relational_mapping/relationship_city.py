@@ -2,6 +2,8 @@
 from model_state import Base
 
 from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 
 class City(Base):
