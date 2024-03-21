@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""State"""
 from sqlalchemy import Column, Integer, String
 from relationship_city import Base, City
 from sqlalchemy.ext.declarative import declarative_base
