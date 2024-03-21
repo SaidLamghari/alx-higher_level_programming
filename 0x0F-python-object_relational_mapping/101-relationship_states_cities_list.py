@@ -15,13 +15,16 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
+    """MySQL"""
     UsName = sys.argv[1]
     PsWord = sys.argv[2]
     PsDaBase = sys.argv[3]
     host = "localhost"
     port = 3306
+
     engn = create_engine(f"mysql+mysqldb://{UsName}:\
             {PsWord}@{host}:{port}/{PsDaBase}")
+
     Base.metadata.create_all(engn)
     Session = sessionmaker(bind=engn)
     session = Session()
@@ -30,4 +33,5 @@ if __name__ == "__main__":
         print(f"{ObjState.id}: {ObjState.name}")
         for city in ObjState.cities:
             print(f"\t{city.id}: {city.name}")
+
     session.close()
