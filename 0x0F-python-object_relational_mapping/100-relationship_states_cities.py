@@ -16,14 +16,13 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     # MySQL setting
+
     UsName = sys.argv[1]
     PsWord = sys.argv[2]
     PsDaBase = sys.argv[3]
     host = "localhost"
     port = 3306
 
-    # Create the CrEng
-    # bind it to session
     CrEng = create_engine(f"mysql+mysqldb://{UsName}:\
             {PsWord}@{host}:{port}/{PsDaBase}")
 
@@ -33,8 +32,6 @@ if __name__ == "__main__":
 
     session = Session()
 
-    # Create California
-    # create San Francisco
     NwStat = State(name="California")
 
     NwCity = City(name="San Francisco", state=NwStat)
@@ -45,5 +42,4 @@ if __name__ == "__main__":
 
     session.commit()
 
-    # Close
     session.close()
