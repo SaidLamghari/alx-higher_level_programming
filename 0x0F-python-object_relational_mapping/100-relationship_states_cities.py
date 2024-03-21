@@ -34,6 +34,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
+    """Entry point of the script."""
 
     UsName = sys.argv[1]
     PsWord = sys.argv[2]
