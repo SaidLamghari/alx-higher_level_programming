@@ -1,30 +1,63 @@
 #!/usr/bin/python3
-"""Lists all ObjState
-from the PsDaBase hbtn_0e_6_usa"""
+"""
+Module: create_california_sf
+
+Description:
+This module creates the "California" state and "San Francisco" city in the database "hbtn_0e_100_usa" using SQLAlchemy.
+
+Author:
+Said Lamghari
+
+Dependencies:
+- Pytn 3
+- SQLAlchemy
+- reltionship_state module
+- reltionship_city module
+
+Usage:
+To use this module, you need to provide three command-line arguments: UsName, PsWord, and PsDaBase.
+
+- UsName: The username for the database connection.
+- PsWord: The password for the database connection.
+- PsDaBase: The name of the database.
+
+Note: replace "<UsName>", "<PsWord>", and "<PsDaBase>" with the actual values.
+"""
+
+from relationship_state import Base, State
+
 import sys
 
+from relationship_city import City
 from sqlalchemy import create_engine
-
 from sqlalchemy.orm import sessionmaker
-
-from model_state import Base, State
 
 
 if __name__ == "__main__":
-    # MySQL setting
+
     UsName = sys.argv[1]
+    PsWord = sys.argv[2]
+    PsDaBase = sys.argv[3]
+    host = "localhost"
     port = 3306
 
-    # Create the engine
-    # bind it to the session
-    engine = create_engine(f"mysql+mysqldb://{UsName}:\
+    CrEng = create_engine(f"mysql+mysqldb://{UsName}:\
             {PsWord}@{host}:{port}/{PsDaBase}")
-    Session = sessionmaker(bind=engine)
+
+    Base.metadata.create_all(CrEng)
+
+    Session = sessionmaker(bind=CrEng)
+
     session = Session()
 
-    # Retrieve objects
-    # sort them by ID
-    ObjStates = session.query(State).order_by(State.id).all()
+    NwStat = State(name="California")
 
+    NwCity = City(name="San Francisco", state=NwStat)
+
+    session.add(NwStat)
+
+    session.add(NwCity)
+
+    session.commit()
 
     session.close()
