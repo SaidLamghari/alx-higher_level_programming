@@ -19,11 +19,11 @@ if __name__ == "__main__":
 
     rqtu = urllib.request.urlopen(inurl)
 
-    """err_u = urllib.error.HTTPError"""
+    err_u = urllib.error.HTTPError
 
     try:
         with rqtu as response:
-            """rsp = response.read().decode('utf-8')"""
-            print(response.read().decode('utf-8'))
-    except urllib.error.HTTPError as e:
+            rsp = response.read().decode("ascii")
+            print(rsp)
+    except err_u as e:
         print("Error code:", e.code)
