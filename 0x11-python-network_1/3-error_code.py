@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     try:
         with rqtu as response:
-            rsp = response.read().decode('utf-8')
-            print(rsp)
+            """rsp = response.read().decode('utf-8')"""
+            print(response.read().decode('utf-8'))
     except urllib.error.HTTPError as e:
         print("Error code:", e.code)
