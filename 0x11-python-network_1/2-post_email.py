@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     dnne = urllib.parse.urlencode(vl).encode('utf-8')
 
-    rqt = urllib.request.Request(inurl, dnne=dnne)
+    rqt = urllib.request.Request(inurl, data=dnne)
 
     rqtu = urllib.request.urlopen(rqt)
 
