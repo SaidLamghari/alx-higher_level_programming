@@ -11,7 +11,7 @@ const apiLnk = process.argv[2];
 const chrctrId = '18';
 
 // Envoi de la requête GET à l'URL spécifiée
-request.get(apiLnk, function (erreur, response, bd) {
+request(apiLnk, function (erreur, response, bd) {
   // Si une erreur s'est produite lors
   // de la requête, afficher l'objet d'erreur
   if (erreur) {
