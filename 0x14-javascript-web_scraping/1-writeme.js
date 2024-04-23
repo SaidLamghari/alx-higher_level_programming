@@ -11,10 +11,15 @@ const contenu = process.argv[3];
 
 // Écriture du contenu dans le fichier spécifié
 fs.writeFile(cheminFcher, contenu, 'utf-8', (erreur) => {
-	// Si une erreur s'est produite lors de
-	// l'écriture, afficher l'objet d'erreur
-	if (erreur) {
-		console.error(erreur);
-		return;
-	}
+  // Si une erreur s'est produite lors de
+  // l'écriture, afficher l'objet d'erreur
+  if (erreur) {
+    console.error(erreur);
+    return;
+  }
+  // Afficher un message indiquant que le contenu
+  // a été écrit avec succès dans le fichier
+  if (!erreur) {
+    console.log(`Le contenu a été écrit dans ${cheminFcher}`);
+  }
 });
