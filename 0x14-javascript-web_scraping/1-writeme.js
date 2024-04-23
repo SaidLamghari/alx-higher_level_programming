@@ -17,4 +17,5 @@ fs.writeFile(cheminFcher, contenu, 'utf-8', (erreur) => {
     console.error(erreur);
     return;
   }
+    return;
 });
