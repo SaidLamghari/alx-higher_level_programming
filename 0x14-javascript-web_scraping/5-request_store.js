@@ -27,7 +27,6 @@ request.get(apLnk, (error, response, body) => {
     // Si une erreur s'est produite lors de l'écriture, afficher l'objet d'erreur
     if (erreur) {
       console.error(erreur);
-      return;
     }
   });
 });
