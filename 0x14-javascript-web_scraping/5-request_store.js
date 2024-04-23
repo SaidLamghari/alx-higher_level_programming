@@ -29,7 +29,5 @@ request.get(apLnk, (error, response, body) => {
       console.error(erreur);
       return;
     }
-    // Afficher un message indiquant que le contenu a été écrit avec succès dans le fichier
-    console.log(`Le contenu a été écrit dans ${cheminFcher}`);
   });
 });
